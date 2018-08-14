@@ -1,13 +1,18 @@
 package com.example.alinagavrila.employees_administration;
 
 public class PmEmployee extends Employee {
-    public int numberOfEmplyees;
+    private int numberOfEmplyees;
 
-    public PmEmployee(String[] name, String[] CNP, int age,Gender gender, int numberOfEmplyees) {
+    private PmEmployee(String[] name, String[] CNP, int age,Gender gender, int numberOfEmplyees) {
         super(name, CNP, age, gender);
         this.numberOfEmplyees = numberOfEmplyees;
     }
-
+    public void setNumberOfEmplyees(int numberOfEmplyees){
+        this.numberOfEmplyees = numberOfEmplyees;
+    }
+    public int getNumberOfEmplyees(){
+        return numberOfEmplyees;
+    }
     @Override
     public void addNewEmployee() {
 
