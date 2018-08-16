@@ -13,23 +13,4 @@ public class PmEmployee extends Employee {
     public int getNumberOfEmplyees(){
         return numberOfEmplyees;
     }
-    @Override
-    public void addNewEmployee() {
-
-    }
-
-    @Override
-    public void viewEmployees() {
-
-    }
-
-    @Override
-    public void sortEmployees() {
-
-    }
-
-    @Override
-    public void updateEmployee() {
-
-    }
 }

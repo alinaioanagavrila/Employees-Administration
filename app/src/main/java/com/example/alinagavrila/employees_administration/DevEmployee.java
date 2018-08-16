@@ -16,24 +16,4 @@ public class DevEmployee extends Employee {
     public ProgrammingLanguage getProgrammingLanguage() {
         return programmingLanguage;
     }
-
-    @Override
-    public void addNewEmployee() {
-
-    }
-
-    @Override
-    public void viewEmployees() {
-
-    }
-
-    @Override
-    public void sortEmployees() {
-
-    }
-
-    @Override
-    public void updateEmployee() {
-
-    }
 }

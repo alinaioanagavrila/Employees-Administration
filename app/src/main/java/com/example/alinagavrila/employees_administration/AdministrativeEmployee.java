@@ -22,23 +22,4 @@ public class AdministrativeEmployee extends Employee {
     public boolean getIsCalculatingSalaries(){
         return isCalculatingTheSalaries;
     }
-    @Override
-    public void addNewEmployee() {
-
-    }
-
-    @Override
-    public void viewEmployees() {
-
-    }
-
-    @Override
-    public void sortEmployees() {
-
-    }
-
-    @Override
-    public void updateEmployee() {
-
-    }
 }

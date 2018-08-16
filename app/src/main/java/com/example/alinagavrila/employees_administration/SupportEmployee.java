@@ -30,23 +30,4 @@ public class SupportEmployee extends Employee {
     public boolean getHardwareSupport(){
         return hardwareSupport;
     }
-    @Override
-    public void addNewEmployee() {
-
-    }
-
-    @Override
-    public void viewEmployees() {
-
-    }
-
-    @Override
-    public void sortEmployees() {
-
-    }
-
-    @Override
-    public void updateEmployee() {
-
-    }
 }

@@ -36,24 +36,4 @@ public class QaEmployee extends Employee {
     public Platform getPlatform() {
         return platform;
     }
-
-    @Override
-    public void addNewEmployee() {
-
-    }
-
-    @Override
-    public void viewEmployees() {
-
-    }
-
-    @Override
-    public void sortEmployees() {
-
-    }
-
-    @Override
-    public void updateEmployee() {
-
-    }
 }

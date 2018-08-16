@@ -1,6 +1,6 @@
 package com.example.alinagavrila.employees_administration;
 
-public abstract class Employee {
+public class Employee {
     public String[] name;
     public String[] CNP;
     public int age;
@@ -39,9 +39,4 @@ public abstract class Employee {
     public Gender getGender() {
         return gender;
     }
-
-    public abstract void addNewEmployee();
-    public abstract void viewEmployees();
-    public abstract void sortEmployees();
-    public abstract void updateEmployee();
 }
