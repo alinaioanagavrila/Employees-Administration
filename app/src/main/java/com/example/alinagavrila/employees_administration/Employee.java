@@ -39,4 +39,16 @@ public class Employee {
     public Gender getGender() {
         return gender;
     }
+
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("***** Employee Details *****\n");
+        stringBuilder.append("Name=" + getName() + "\n");
+        stringBuilder.append("CNP=" + getCNP() + "\n");
+        stringBuilder.append("Age=" + getAge() + "\n");
+        stringBuilder.append("Gender=" + getGender() + "\n");
+        stringBuilder.append("\n*****************************");
+        return stringBuilder.toString();
+    }
 }
+
