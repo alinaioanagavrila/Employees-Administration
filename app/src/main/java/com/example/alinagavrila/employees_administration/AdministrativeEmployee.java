@@ -22,4 +22,13 @@ public class AdministrativeEmployee extends Employee {
     public boolean getIsCalculatingSalaries(){
         return isCalculatingTheSalaries;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(super.toString() + "\n");
+        stringBuilder.append("Approves Leave=" + getApprovesLeave() + "\n");
+        stringBuilder.append("Is Calculating The Salaries=" + getIsCalculatingSalaries() + "\n");
+        return stringBuilder.toString();
+    }
 }

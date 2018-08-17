@@ -30,4 +30,14 @@ public class SupportEmployee extends Employee {
     public boolean getHardwareSupport(){
         return hardwareSupport;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(super.toString() + "\n");
+        stringBuilder.append("Install Operating System=" + getInstallOperatingSystem() + "\n");
+        stringBuilder.append("Network Support=" + getNetworkSupport() + "\n");
+        stringBuilder.append("Hardware Support=" + getHardwareSupport() + "\n");
+        return stringBuilder.toString();
+    }
 }

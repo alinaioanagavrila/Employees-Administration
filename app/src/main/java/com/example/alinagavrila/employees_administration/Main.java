@@ -18,7 +18,7 @@ public class Main extends ArrayList {
 
     public void viewEmployees() {
         for(int i=0; i<numberOfEmplyees; i++){
-            System.out.println(employeeList.get(i));
+            System.out.println(employeeList.get(i).getName() + " | " + employeeList.get(i).getAge() + " | " + employeeList.get(i).getGender());
         }
     }
 
@@ -30,7 +30,7 @@ public class Main extends ArrayList {
 
     }
 
-    public static void main (String[] args){
+    public void main (String[] args){
 
     }
 }

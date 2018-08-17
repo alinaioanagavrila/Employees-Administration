@@ -14,4 +14,12 @@ public class TlQaEmployee extends QaEmployee {
     public int getNumberOfTeamMembers() {
         return numberOfTeamMembers;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(super.toString() + "\n");
+        stringBuilder.append("Number of Team Members=" + getNumberOfTeamMembers() + "\n");
+        return stringBuilder.toString();
+    }
 }

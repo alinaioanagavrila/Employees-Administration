@@ -13,4 +13,12 @@ public class PmEmployee extends Employee {
     public int getNumberOfEmplyees(){
         return numberOfEmplyees;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(super.toString() + "\n");
+        stringBuilder.append("Number of employees=" + getNumberOfEmplyees() + "\n");
+        return stringBuilder.toString();
+    }
 }

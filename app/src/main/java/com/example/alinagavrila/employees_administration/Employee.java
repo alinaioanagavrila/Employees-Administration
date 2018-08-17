@@ -47,7 +47,6 @@ public class Employee {
         stringBuilder.append("CNP=" + getCNP() + "\n");
         stringBuilder.append("Age=" + getAge() + "\n");
         stringBuilder.append("Gender=" + getGender() + "\n");
-        stringBuilder.append("\n*****************************");
         return stringBuilder.toString();
     }
 }

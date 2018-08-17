@@ -17,7 +17,7 @@ public class QaEmployee extends Employee {
         this.hasIstqb = hasIstqb;
     }
 
-    public boolean isHasIstqb() {
+    public boolean getHasIstqb() {
         return hasIstqb;
     }
 
@@ -35,5 +35,15 @@ public class QaEmployee extends Employee {
 
     public Platform getPlatform() {
         return platform;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(super.toString() + "\n");
+        stringBuilder.append("Has Istqb=" + getHasIstqb() + "\n");
+        stringBuilder.append("Is Manual=" + getIsManual() + "\n");
+        stringBuilder.append("Platform=" + getPlatform() + "\n");
+        return stringBuilder.toString();
     }
 }
