@@ -4,6 +4,7 @@ public class SupportEmployee extends Employee {
     private boolean installOperatingSystem;
     private boolean networkSupport;
     private boolean hardwareSupport;
+    private String type = "Support";
 
     private SupportEmployee(String[] name, String[] CNP, int age,Gender gender, boolean installOperatingSystem, boolean networkSupport, boolean hardwareSupport) {
         super(name, CNP, age, gender);
@@ -29,6 +30,14 @@ public class SupportEmployee extends Employee {
     }
     public boolean getHardwareSupport(){
         return hardwareSupport;
+    }
+
+    public void setType(String type){
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 
     @Override

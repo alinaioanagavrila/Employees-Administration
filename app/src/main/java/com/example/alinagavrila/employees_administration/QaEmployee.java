@@ -5,6 +5,7 @@ public class QaEmployee extends Employee {
     private boolean isManual;
     public enum Platform {Mobile, Web, Desktop};
     private Platform platform;
+    private String type = "Qa";
 
     public QaEmployee (String[] name, String[] CNP, int age,Gender gender, boolean hasIstqb, Platform platform, boolean isManual){
         super(name, CNP, age, gender);
@@ -35,6 +36,14 @@ public class QaEmployee extends Employee {
 
     public Platform getPlatform() {
         return platform;
+    }
+
+    public void setType(String type){
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 
     @Override

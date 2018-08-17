@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Main extends ArrayList {
     private ArrayList<Employee> employeeList = new ArrayList<Employee>();
     private int numberOfEmplyees = 0;
+    public enum EmployeeType {Administrative ,Dev , Pm, Qa, Support,  TlDev, TlQa};
+    private EmployeeType employeeType;
 
     public void addNewEmployee(Employee employee) {
         employeeList.add(employee);
@@ -18,7 +20,7 @@ public class Main extends ArrayList {
 
     public void viewEmployees() {
         for(int i=0; i<numberOfEmplyees; i++){
-            System.out.println(employeeList.get(i).getName() + " | " + employeeList.get(i).getAge() + " | " + employeeList.get(i).getGender());
+            employeeList.get(i).toString();
         }
     }
 

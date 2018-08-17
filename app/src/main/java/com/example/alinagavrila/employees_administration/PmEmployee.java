@@ -2,6 +2,7 @@ package com.example.alinagavrila.employees_administration;
 
 public class PmEmployee extends Employee {
     private int numberOfEmplyees;
+    private String type = "Pm";
 
     private PmEmployee(String[] name, String[] CNP, int age,Gender gender, int numberOfEmplyees) {
         super(name, CNP, age, gender);
@@ -12,6 +13,14 @@ public class PmEmployee extends Employee {
     }
     public int getNumberOfEmplyees(){
         return numberOfEmplyees;
+    }
+
+    public void setType(String type){
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 
     @Override

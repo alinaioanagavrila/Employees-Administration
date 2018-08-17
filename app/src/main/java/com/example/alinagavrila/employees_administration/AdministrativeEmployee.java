@@ -3,6 +3,7 @@ package com.example.alinagavrila.employees_administration;
 public class AdministrativeEmployee extends Employee {
     private boolean approvesLeave;
     private boolean isCalculatingTheSalaries;
+    private String type = "Administrative";
 
     public AdministrativeEmployee(String[] name, String[] CNP, int age,Gender gender, boolean approvesLeave, boolean isCalculatingTheSalaries) {
         super(name, CNP, age, gender);
@@ -21,6 +22,14 @@ public class AdministrativeEmployee extends Employee {
     }
     public boolean getIsCalculatingSalaries(){
         return isCalculatingTheSalaries;
+    }
+
+    public void setType(String type){
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 
     @Override
