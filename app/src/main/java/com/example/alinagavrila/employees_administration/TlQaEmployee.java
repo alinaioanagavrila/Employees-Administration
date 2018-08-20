@@ -4,7 +4,12 @@ public class TlQaEmployee extends QaEmployee {
     private int numberOfTeamMembers;
     private String type = "TlQa";
 
-    public TlQaEmployee(String[] name, String[] CNP, int age, Gender gender, boolean hasIstqb, Platform platform, boolean isManual) {
+    public TlQaEmployee(){
+        super();
+        this.numberOfTeamMembers = 0;
+    }
+
+    public TlQaEmployee(String name, String CNP, int age, Gender gender, boolean hasIstqb, Platform platform, boolean isManual) {
         super(name, CNP, age, gender, hasIstqb, platform, isManual);
     }
 

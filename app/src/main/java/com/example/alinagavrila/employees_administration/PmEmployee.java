@@ -4,7 +4,12 @@ public class PmEmployee extends Employee {
     private int numberOfEmplyees;
     private String type = "Pm";
 
-    private PmEmployee(String[] name, String[] CNP, int age,Gender gender, int numberOfEmplyees) {
+    public PmEmployee(){
+        super();
+        this.numberOfEmplyees = 0;
+    }
+
+    public PmEmployee(String name, String CNP, int age,Gender gender, int numberOfEmplyees) {
         super(name, CNP, age, gender);
         this.numberOfEmplyees = numberOfEmplyees;
     }
@@ -24,9 +29,9 @@ public class PmEmployee extends Employee {
     }
 
     @Override
-    public String toString() {
+    public String show() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(super.toString() + "\n");
+        stringBuilder.append(super.show() + "\n");
         stringBuilder.append("Number of employees=" + getNumberOfEmplyees() + "\n");
         return stringBuilder.toString();
     }

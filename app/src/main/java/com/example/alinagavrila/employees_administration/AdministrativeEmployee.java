@@ -5,7 +5,13 @@ public class AdministrativeEmployee extends Employee {
     private boolean isCalculatingTheSalaries;
     private String type = "Administrative";
 
-    public AdministrativeEmployee(String[] name, String[] CNP, int age,Gender gender, boolean approvesLeave, boolean isCalculatingTheSalaries) {
+    public AdministrativeEmployee(){
+        super();
+        this.approvesLeave = false;
+        this.isCalculatingTheSalaries = false;
+    }
+
+    public AdministrativeEmployee(String name, String CNP, int age,Gender gender, boolean approvesLeave, boolean isCalculatingTheSalaries) {
         super(name, CNP, age, gender);
         this.approvesLeave = approvesLeave;
         this.isCalculatingTheSalaries = isCalculatingTheSalaries;

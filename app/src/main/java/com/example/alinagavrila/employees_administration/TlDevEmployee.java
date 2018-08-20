@@ -4,7 +4,12 @@ public class TlDevEmployee extends DevEmployee {
     private int numberOfTeamMembers;
     private String type = "TlDev";
 
-    public TlDevEmployee(String[] name, String[] CNP, int age,Gender gender, ProgrammingLanguage programmingLanguage) {
+    public TlDevEmployee(){
+        super();
+        this.numberOfTeamMembers = 0;
+    }
+
+    public TlDevEmployee(String name, String CNP, int age,Gender gender, ProgrammingLanguage programmingLanguage) {
         super(name, CNP, age, gender, programmingLanguage);
     }
 

@@ -6,7 +6,14 @@ public class SupportEmployee extends Employee {
     private boolean hardwareSupport;
     private String type = "Support";
 
-    private SupportEmployee(String[] name, String[] CNP, int age,Gender gender, boolean installOperatingSystem, boolean networkSupport, boolean hardwareSupport) {
+    public SupportEmployee(){
+        super();
+        this.installOperatingSystem = false;
+        this.networkSupport = false;
+        this.hardwareSupport = false;
+    }
+
+    public SupportEmployee(String name, String CNP, int age,Gender gender, boolean installOperatingSystem, boolean networkSupport, boolean hardwareSupport) {
         super(name, CNP, age, gender);
         this.installOperatingSystem = installOperatingSystem;
         this.networkSupport = networkSupport;

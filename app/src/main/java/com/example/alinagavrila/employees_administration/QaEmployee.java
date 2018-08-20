@@ -7,7 +7,13 @@ public class QaEmployee extends Employee {
     private Platform platform;
     private String type = "Qa";
 
-    public QaEmployee (String[] name, String[] CNP, int age,Gender gender, boolean hasIstqb, Platform platform, boolean isManual){
+    public QaEmployee (){
+        super();
+        this.hasIstqb = false;
+        this.isManual = true;
+    }
+
+    public QaEmployee (String name, String CNP, int age,Gender gender, boolean hasIstqb, Platform platform, boolean isManual){
         super(name, CNP, age, gender);
         this.hasIstqb = hasIstqb;
         this.platform = platform;

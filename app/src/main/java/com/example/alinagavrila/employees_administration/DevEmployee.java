@@ -5,7 +5,11 @@ public class DevEmployee extends Employee {
     private ProgrammingLanguage programmingLanguage;
     private String type = "Dev";
 
-    public  DevEmployee(String[] name, String[] CNP, int age, Gender gender, ProgrammingLanguage programmingLanguage) {
+    public DevEmployee(){
+        super();
+    }
+
+    public  DevEmployee(String name, String CNP, int age, Gender gender, ProgrammingLanguage programmingLanguage) {
         super(name, CNP, age, gender);
         this.programmingLanguage = programmingLanguage;
     }

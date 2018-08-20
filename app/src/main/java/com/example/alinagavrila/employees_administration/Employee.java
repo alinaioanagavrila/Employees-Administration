@@ -1,29 +1,37 @@
 package com.example.alinagavrila.employees_administration;
 
 public class Employee {
-    public String[] name;
-    public String[] CNP;
+    public String name;
+    public String CNP;
     public int age;
+
+    public Employee() {
+        this.name = "";
+        this.CNP = "";
+        this.age = 0;
+    }
+
     public enum Gender { F, M };
     public Gender gender;
+    public String type;
 
-    public Employee (String[] name, String[] CNP, int age, Gender gender){
+    public Employee (String name, String CNP, int age, Gender gender){
         this.name = name;
         this.CNP = CNP;
         this.age = age;
         this.gender = gender;
     }
 
-    public void setName(String[] name){
+    public void setName(String name){
         this.name=name;
     }
-    public String[] getName(){
+    public String getName(){
         return name;
     }
-    public void setCNP(String[] CNP){
+    public void setCNP(String CNP){
         this.CNP=CNP;
     }
-    public String[] getCNP(){
+    public String getCNP(){
         return CNP;
     }
     public void setAge(int age){
@@ -38,6 +46,14 @@ public class Employee {
 
     public Gender getGender() {
         return gender;
+    }
+
+    public void setType(String type){
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public String toString(){
