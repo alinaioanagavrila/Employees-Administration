@@ -22,6 +22,5 @@ public class Employee {
         stringBuilder.append("Gender=" + employeeData.get("GENDER") + "\n");
         return stringBuilder.toString();
     }
-
 }
 
