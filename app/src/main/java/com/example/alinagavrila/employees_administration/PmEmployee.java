@@ -1,38 +1,19 @@
 package com.example.alinagavrila.employees_administration;
 
+import com.example.alinagavrila.employees_administration.constants.Enums.Gender;
+
 public class PmEmployee extends Employee {
-    private int numberOfEmplyees;
-    private String type = "Pm";
 
-    public PmEmployee(){
-        super();
-        this.numberOfEmplyees = 0;
-    }
-
-    public PmEmployee(String name, String CNP, int age,Gender gender, int numberOfEmplyees) {
-        super(name, CNP, age, gender);
-        this.numberOfEmplyees = numberOfEmplyees;
-    }
-    public void setNumberOfEmplyees(int numberOfEmplyees){
-        this.numberOfEmplyees = numberOfEmplyees;
-    }
-    public int getNumberOfEmplyees(){
-        return numberOfEmplyees;
-    }
-
-    public void setType(String type){
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
+    public PmEmployee(String name, String CNP, Gender gender, String type, int numberOfEmplyees) {
+        super(name, CNP, gender, type);
+        employeeData.put("NumberOfEmployees", String.valueOf(numberOfEmplyees));
     }
 
     @Override
-    public String show() {
+    public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(super.show() + "\n");
-        stringBuilder.append("Number of employees=" + getNumberOfEmplyees() + "\n");
+        stringBuilder.append(super.toString() + "\n");
+        stringBuilder.append("Number of employees=" + employeeData.get("NumberOfEmployees") + "\n");
         return stringBuilder.toString();
     }
 }

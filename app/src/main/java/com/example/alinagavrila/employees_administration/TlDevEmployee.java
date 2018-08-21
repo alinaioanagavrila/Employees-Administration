@@ -1,39 +1,20 @@
 package com.example.alinagavrila.employees_administration;
 
+import com.example.alinagavrila.employees_administration.constants.Enums.Gender;
+import com.example.alinagavrila.employees_administration.constants.Enums.ProgrammingLanguage;
+
 public class TlDevEmployee extends DevEmployee {
-    private int numberOfTeamMembers;
-    private String type = "TlDev";
 
-    public TlDevEmployee(){
-        super();
-        this.numberOfTeamMembers = 0;
-    }
-
-    public TlDevEmployee(String name, String CNP, int age,Gender gender, ProgrammingLanguage programmingLanguage) {
-        super(name, CNP, age, gender, programmingLanguage);
-    }
-
-    public void setNumberOfTeamMembers(int numberOfTeamMembers) {
-        this.numberOfTeamMembers = numberOfTeamMembers;
-    }
-
-    public int getNumberOfTeamMembers() {
-        return numberOfTeamMembers;
-    }
-
-    public void setType(String type){
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
+    public TlDevEmployee(String name, String CNP, Gender gender, String type, ProgrammingLanguage programmingLanguage, int numberOfTeamMembers) {
+        super(name, CNP, gender, type, programmingLanguage);
+        employeeData.put("NumberOfTeamMembers", String.valueOf(numberOfTeamMembers));
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(super.toString() + "\n");
-        stringBuilder.append("Number of Team Members=" + getNumberOfTeamMembers() + "\n");
+        stringBuilder.append("Number of Team Members=" + employeeData.get("NumberOfTeamMembers") + "\n");
         return stringBuilder.toString();
     }
 }

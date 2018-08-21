@@ -1,64 +1,24 @@
 package com.example.alinagavrila.employees_administration;
 
+import com.example.alinagavrila.employees_administration.constants.Enums.Gender;
+import com.example.alinagavrila.employees_administration.constants.Enums.Platform;
+
 public class QaEmployee extends Employee {
-    private boolean hasIstqb;
-    private boolean isManual;
-    public enum Platform {Mobile, Web, Desktop};
-    private Platform platform;
-    private String type = "Qa";
 
-    public QaEmployee (){
-        super();
-        this.hasIstqb = false;
-        this.isManual = true;
-    }
-
-    public QaEmployee (String name, String CNP, int age,Gender gender, boolean hasIstqb, Platform platform, boolean isManual){
-        super(name, CNP, age, gender);
-        this.hasIstqb = hasIstqb;
-        this.platform = platform;
-        this.isManual = isManual;
-    }
-
-    public void setHasIstqb(boolean hasIstqb) {
-        this.hasIstqb = hasIstqb;
-    }
-
-    public boolean getHasIstqb() {
-        return hasIstqb;
-    }
-
-    public void setIsManual(boolean isManual){
-        this.isManual = isManual;
-    }
-
-    public boolean getIsManual() {
-        return isManual;
-    }
-
-    public void setPlatform(Platform platform) {
-        this.platform = platform;
-    }
-
-    public Platform getPlatform() {
-        return platform;
-    }
-
-    public void setType(String type){
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
+    public QaEmployee (String name, String CNP, Gender gender, String type, boolean hasIstqb, Platform platform, boolean isManual) {
+        super(name, CNP, gender, type);
+        employeeData.put("HasISTQB", String.valueOf(hasIstqb));
+        employeeData.put("PLATFORM", platform.toString());
+        employeeData.put("IsManual", String.valueOf(isManual));
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(super.toString() + "\n");
-        stringBuilder.append("Has Istqb=" + getHasIstqb() + "\n");
-        stringBuilder.append("Is Manual=" + getIsManual() + "\n");
-        stringBuilder.append("Platform=" + getPlatform() + "\n");
+        stringBuilder.append("Has Istqb=" + employeeData.get("HasISTQB") + "\n");
+        stringBuilder.append("Is Manual=" + employeeData.get("PLATFORM") + "\n");
+        stringBuilder.append("Platform=" + employeeData.get("IsManual") + "\n");
         return stringBuilder.toString();
     }
 }

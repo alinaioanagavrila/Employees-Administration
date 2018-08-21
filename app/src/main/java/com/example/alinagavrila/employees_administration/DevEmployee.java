@@ -1,40 +1,20 @@
 package com.example.alinagavrila.employees_administration;
 
+import com.example.alinagavrila.employees_administration.constants.Enums.ProgrammingLanguage;
+import com.example.alinagavrila.employees_administration.constants.Enums.Gender;
+
 public class DevEmployee extends Employee {
-    public enum ProgrammingLanguage {Java, CSharp, CPlusPlus, C, Python, Javascript, DotNet, Ruby};
-    private ProgrammingLanguage programmingLanguage;
-    private String type = "Dev";
 
-    public DevEmployee(){
-        super();
-    }
-
-    public  DevEmployee(String name, String CNP, int age, Gender gender, ProgrammingLanguage programmingLanguage) {
-        super(name, CNP, age, gender);
-        this.programmingLanguage = programmingLanguage;
-    }
-
-    public void setProgrammingLanguage(ProgrammingLanguage programmingLanguage){
-        this.programmingLanguage = programmingLanguage;
-    }
-
-    public ProgrammingLanguage getProgrammingLanguage() {
-        return programmingLanguage;
-    }
-
-    public void setType(String type){
-        this.type = type;
-    }
-
-    public String getType() {
-        return type;
+    public  DevEmployee(String name, String CNP, Gender gender, String type, ProgrammingLanguage programmingLanguage) {
+        super(name, CNP, gender, type);
+        employeeData.put("ProgrammingLanguage",programmingLanguage.toString());
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(super.toString() + "\n");
-        stringBuilder.append("ProgrammingLanguage=" + getProgrammingLanguage() + "\n");
+        stringBuilder.append("ProgrammingLanguage=" + employeeData.get("ProgrammingLanguage") + "\n");
         return stringBuilder.toString();
     }
 }
