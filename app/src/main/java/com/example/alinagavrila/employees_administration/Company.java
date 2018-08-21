@@ -1,6 +1,7 @@
 package com.example.alinagavrila.employees_administration;
 
 import com.example.alinagavrila.employees_administration.constants.Enums.EmployeeType;
+import com.example.alinagavrila.employees_administration.constants.Enums.Gender;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,11 +49,40 @@ public class Company {
         }
     }
 
-    public void consoleMenu(){
-        System.out.println("***** Company menu *****\n");
+    public void consoleMenu() {
+        System.out.println("***** Company Menu *****\n\n");
+        System.out.println("1. Add New Employee \n");
+        System.out.println("2. Update Employee information \n");
+        System.out.println("3. Remove Employee \n");
+        System.out.println("4. Sort Employees List \n");
+        System.out.println("5. View Employee List \n\n");
+        System.out.println("Choose an action from menu:");
     }
 
-    public void main (String[] args){
+    public void main (String[] args) {
+        Employee employee= new AdministrativeEmployee("Popescu Mihai","1870315151541", Gender.M, "Administrative", true, true);
+        consoleMenu();
+        String menuOption = System.console().readLine();
 
+        switch(menuOption){
+             case "1":
+                 addNewEmployee(employee);
+                 break;
+             case "2":
+                 updateEmployee(employee,"NAME","Popescu George");
+                 break;
+             case "3":
+                 removeEmployee(employee);
+                 break;
+             case "4":
+                 sortAlphabeticalEmployees();
+                 break;
+             case "5":
+                 viewEmployees();
+                 break;
+             default:
+                 System.out.println("Option not valid");
+                 break;
+        }
     }
 }
