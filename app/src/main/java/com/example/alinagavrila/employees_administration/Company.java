@@ -1,6 +1,5 @@
 package com.example.alinagavrila.employees_administration;
 
-import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -13,6 +12,10 @@ import java.util.List;
 public class Company {
     final static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public static List<Employee> employeeList = new ArrayList<>();
+
+    public static JSONObject companyData = new JSONObject();
+    public static JSONArray companyEmployees = new JSONArray();
+    public static JSONObject employee;
 
     /**
      * This method removes an employee from the list of employees
@@ -224,10 +227,10 @@ public class Company {
         }
     }
 
-    public static void getEmployeesInJSONFormat() throws JSONException {
-        JSONObject companyData = new JSONObject();
-        JSONArray companyEmployees = new JSONArray();
-        JSONObject employee;
+    /**
+     * This method constructs JSON Object and displayes it based on the ArrayList
+     */
+    public static void getEmployeesInJSONFormat() {
         String key;
 
         for (int i = 0; i < employeeList.size(); i++) {
@@ -236,15 +239,44 @@ public class Company {
                 key = employeeList.get(i).specificAtributes.get(j);
                 employee.put(key, employeeList.get(i).employeeData.get(key));
             }
-            companyEmployees.add(employee);
+            companyEmployees.add(i, employee);
         }
-        companyData.put("bla bla", companyEmployees);
+        companyData.put("Employees", companyEmployees);
 
+        System.out.println(companyData.toString());
+    }
+
+    /**
+     * This method updates a JSONObject from a JSONArray
+     * @throws IOException
+     */
+    public static void updateEmployeeDataFromJSON() throws IOException {
+
+        System.out.println("Insert index of the employee to be updated: ");
+        String index = br.readLine();
+        System.out.println("Insert key to be modified: ");
+        String key = br.readLine();
+        System.out.println("Insert new value for the key: ");
+        String value = br.readLine();
+
+        int size = companyEmployees.size();
+        companyData.remove("Employees");
+        for (int i = 0; i < size; i++) {
+            JSONObject employee = (JSONObject) companyEmployees.get(i);
+            if (index.equals(String.valueOf(i))) {
+                employee.remove(key);
+                employee.put(key, value);
+                companyEmployees.remove(i);
+                companyEmployees.add(i, employee);
+            }
+        }
+        companyData.put("Employee",companyEmployees);
         System.out.println(companyData.toString());
     }
 
     public static void main(String[] args) throws Exception {
         chooseAnOptionFromMenu();
         getEmployeesInJSONFormat();
+        updateEmployeeDataFromJSON();
     }
 }
