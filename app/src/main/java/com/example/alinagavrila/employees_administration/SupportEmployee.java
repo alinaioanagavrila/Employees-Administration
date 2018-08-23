@@ -6,9 +6,9 @@ public class SupportEmployee extends Employee {
 
     public SupportEmployee(){
         super();
-        this.specificAtributes.add("InstallOperatingSystem");
-        this.specificAtributes.add("NetworkSupport");
-        this.specificAtributes.add("HardwareSupport");
+        this.specificAtributes.add("InstallOperatingSystem (True, False)");
+        this.specificAtributes.add("NetworkSupport (True, False)");
+        this.specificAtributes.add("HardwareSupport (True, False)");
     }
 
     public SupportEmployee(String name, String CNP, Gender gender, String type, boolean installOperatingSystem, boolean networkSupport, boolean hardwareSupport) {

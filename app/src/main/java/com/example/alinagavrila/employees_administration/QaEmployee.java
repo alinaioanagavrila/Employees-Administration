@@ -4,14 +4,14 @@ import com.example.alinagavrila.employees_administration.constants.Enums.Gender;
 
 public class QaEmployee extends Employee {
 
-    public QaEmployee(){
+    public QaEmployee() {
         super();
         this.specificAtributes.add("HasISTQB (True, False)");
         this.specificAtributes.add("PLATFORM (Web, Mobile, Desktop)");
         this.specificAtributes.add("IsManual (True, False)");
     }
 
-    public QaEmployee (String name, String CNP, Gender gender, String type, boolean hasIstqb, String platform, boolean isManual) {
+    public QaEmployee(String name, String CNP, Gender gender, String type, boolean hasIstqb, String platform, boolean isManual) {
         super(name, CNP, gender, type);
         this.specificAtributes.add("HasISTQB (True, False)");
         this.specificAtributes.add("PLATFORM (Web, Mobile, Desktop)");
